@@ -1,4 +1,27 @@
-CREATE TABLE publisher(id integer PRIMARY KEY,name text,country text);
-CREATE TABLE books(id integer PRIMARY KEY,title text,publisher integer,FOREIGN KEY (publisher) REFERENCES publisher(id));
-CREATE TABLE subjects(id integer PRIMARY KEY,name text);
-CREATE TABLE books_subjects(book integer,subject integer,FOREIGN KEY (book) REFERENCES books(id),FOREIGN KEY (subject) REFERENCES subjects(id));  
+create table publisher(
+    id integer primary key,
+    name text,
+    country text
+);
+
+-- Creating books table
+
+create table books(
+    id integer primary key,
+    title text,
+    publisher integer
+);
+
+-- Creating subjects table
+
+create table subjects(
+    id integer primary key,
+    name text
+);
+
+-- Creating books_subjects table
+
+create table books_subjects(
+    book integer,
+    subject integer
+);
